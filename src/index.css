@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ── Light / White theme ── */
+    --background: 210 20% 97%;
+    --foreground: 220 25% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 12%;
+
+    --primary: 158 70% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 18% 94%;
+    --secondary-foreground: 220 20% 30%;
+
+    --muted: 210 16% 93%;
+    --muted-foreground: 215 15% 50%;
+
+    --accent: 45 96% 52%;
+    --accent-foreground: 30 80% 15%;
+
+    --destructive: 4 78% 52%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 18% 88%;
+    --input: 210 18% 94%;
+    --ring: 158 70% 38%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar: white with soft left shadow */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 215 15% 52%;
+    --sidebar-primary: 158 70% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 18% 96%;
+    --sidebar-accent-foreground: 220 25% 14%;
+    --sidebar-border: 210 18% 90%;
+    --sidebar-ring: 158 70% 38%;
+
+    --success: 158 70% 38%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 96% 52%;
+    --warning-foreground: 30 80% 15%;
+    --info: 207 85% 52%;
+    --info-foreground: 0 0% 100%;
+
+    /* Category colours (vivid but not neon) */
+    --pos-emerald: 158 70% 38%;
+    --pos-sky: 199 82% 48%;
+    --pos-violet: 262 72% 58%;
+    --pos-amber: 38 92% 50%;
+    --pos-rose: 348 78% 54%;
+    --pos-coral: 20 82% 54%;
+    --pos-teal: 175 62% 42%;
+    --pos-indigo: 226 64% 56%;
+    --pos-fuchsia: 290 76% 58%;
+    --pos-lime: 84 72% 44%;
+
+    --chart-1: 158 70% 38%;
+    --chart-2: 207 85% 52%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 262 72% 58%;
+    --chart-5: 4 78% 52%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Space Grotesk', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  .font-mono  { font-family: 'JetBrains Mono', monospace; }
+  .font-display { font-family: 'Syne', sans-serif; }
+}
+
+@layer utilities {
+  /* Cards */
+  .card-surface {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: 1rem;
+  }
+  .pos-shadow {
+    box-shadow: 0 1px 3px hsl(220 20% 12% / 0.06), 0 4px 16px hsl(220 20% 12% / 0.06);
+  }
+  .pos-shadow-md {
+    box-shadow: 0 2px 6px hsl(220 20% 12% / 0.08), 0 8px 24px hsl(220 20% 12% / 0.08);
+  }
+  /* Emerald glow (keep subtle on white) */
+  .glow-emerald-sm { box-shadow: 0 0 0 3px hsl(158 70% 38% / 0.15); }
+
+  /* POS button base */
+  .pos-btn {
+    @apply font-bold uppercase tracking-widest text-xs transition-all duration-150 active:scale-95 select-none;
+  }
+
+  /* Category pill tabs */
+  .pill-tab {
+    @apply px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 select-none cursor-pointer whitespace-nowrap;
+  }
+  .pill-tab-active  { @apply text-white; }
+  .pill-tab-inactive {
+    @apply bg-secondary text-muted-foreground hover:bg-muted hover:text-foreground border border-border;
+  }
+
+  /* Product card */
+  .product-card {
+    @apply relative flex flex-col items-center justify-center rounded-2xl border-2 border-transparent
+           min-h-[90px] text-center transition-all duration-150 cursor-pointer select-none;
+  }
+  .product-card:hover   { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+  .product-card:active  { transform: scale(0.96); }
+
+  /* Custom scrollbar (light) */
+  .custom-scroll::-webkit-scrollbar { width: 5px; }
+  .custom-scroll::-webkit-scrollbar-track { background: transparent; }
+  .custom-scroll::-webkit-scrollbar-thumb { background: hsl(210 18% 84%); border-radius: 4px; }
+  .custom-scroll::-webkit-scrollbar-thumb:hover { background: hsl(210 18% 72%); }
+
+  /* Numpad button */
+  .numpad-btn {
+    @apply h-12 rounded-xl bg-secondary hover:bg-muted text-foreground font-bold text-lg
+           transition-all duration-100 active:scale-95 border border-border select-none;
+  }
+
+  /* Sidebar active indicator bar */
+  .sidebar-active::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 20%; bottom: 20%;
+    width: 3px;
+    background: hsl(var(--primary));
+    border-radius: 0 3px 3px 0;
+  }
+
+  /* Animations */
+  @keyframes fadeUp    { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes slideInR  { from { opacity:0; transform:translateX(10px); } to { opacity:1; transform:translateX(0); } }
+  @keyframes pop       { 0%{transform:scale(1)} 50%{transform:scale(1.07)} 100%{transform:scale(1)} }
+  @keyframes pulseRing { 0%,100%{box-shadow:0 0 0 3px hsl(158 70% 38% / 0.2)} 50%{box-shadow:0 0 0 6px hsl(158 70% 38% / 0.08)} }
+  @keyframes shimmer   { from{background-position:-200% 0} to{background-position:200% 0} }
+  @keyframes spinIn    { from{opacity:0;transform:rotate(-10deg) scale(0.8)} to{opacity:1;transform:rotate(0) scale(1)} }
+
+  .animate-fade-up      { animation: fadeUp .22s ease-out; }
+  .animate-slide-in-r   { animation: slideInR .2s ease-out; }
+  .animate-pop          { animation: pop .22s ease-out; }
+  .animate-pulse-ring   { animation: pulseRing 2s ease-in-out infinite; }
+  .animate-spin-in      { animation: spinIn .3s cubic-bezier(.34,1.56,.64,1); }
+
+  /* Real-time sync pulse dot */
+  @keyframes syncPulse {
+    0%,100% { opacity:1; transform:scale(1); }
+    50%      { opacity:.5; transform:scale(1.4); }
+  }
+  .sync-dot { animation: syncPulse 1.5s ease-in-out infinite; }
+}

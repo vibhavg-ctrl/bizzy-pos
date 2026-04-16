@@ -1,73 +1,58 @@
-# Welcome to your Lovable project
+# Bizzy POS 🛒
 
-## Project info
+A modern, full-featured Point of Sale system built for supermarkets and retail stores. Designed and developed by **Vibhav Gupta**.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## What it does
 
-## How can I edit this code?
+Bizzy POS is a complete retail management system that handles everything from checkout to inventory, online orders, staff management, and business reports — all in one clean, fast interface.
 
-There are several ways of editing your application.
+### Key Features
 
-**Use Lovable**
+- **POS Terminal** — Fast checkout with barcode scanning, product grid with category filters, numpad for quantity/discount, cash change calculator, and keyboard shortcuts (F2/F3/F4/F12)
+- **Inventory Management** — Full product catalogue with stock tracking, low stock alerts, margin analysis, and bulk CSV import with a sample sheet
+- **Online Orders** — Manage Blinkit, Zepto, Swiggy Instamart, BigBasket, and Dunzo orders from one screen with one-click status updates
+- **Purchase Orders** — Create and receive goods from suppliers with automatic stock updates on GRN
+- **Reports** — Download Daily Sales, GST, Product, Stock Movement, and Purchase reports in PDF, Excel, or CSV
+- **Multi-outlet Support** — Switch between store locations from the top bar; each outlet has its own data
+- **User & Role Management** — Add staff with 5 access roles: Admin, Manager, Cashier, Inventory Manager, and Reports Viewer
+- **Real-time Sync** — Every action (checkout, stock update, user change) syncs instantly with a live indicator in the top bar
+- **Settings** — Store info, billing & tax config, notifications, security (PIN/auto-lock), printing, and third-party integrations
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **React 18** with TypeScript
+- **Vite** for blazing fast builds
+- **Tailwind CSS** for styling
+- **Zustand** for state management
+- **Recharts** for analytics charts
+- **Radix UI / shadcn** for accessible components
+- **Sonner** for toast notifications
 
-**Use your preferred IDE**
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```bash
+# Install dependencies
+npm install
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
+
+# Build for production
+npm run build
 ```
 
-**Edit a file directly in GitHub**
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Screenshots
 
-**Use GitHub Codespaces**
+The app includes:
+- A clean white dashboard with live sales charts and low stock alerts
+- A full-screen POS terminal with colourful product cards by category
+- An inventory table with stock progress bars and margin percentages
+- An online orders board with platform badges and one-click fulfilment
+- A reports page with real downloadable PDF, Excel, and CSV files
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Made by
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+**Vibhav Gujrani**
+GitHub: [@vibhavg-ctrl](https://github.com/vibhavg-ctrl)

@@ -1,6 +1,6 @@
 # Bizzy POS 🛒
 
-A modern, full-featured Point of Sale system built for supermarkets and retail stores. Designed and developed by **Vibhav Gupta**.
+A modern, full-featured Point of Sale system built for supermarkets and retail stores. Designed and developed by **Vibhav**.
 
 ## What it does
 
@@ -54,5 +54,5 @@ The app includes:
 
 ## Made by
 
-**Vibhav Gujrani**
+**Vibhav**
 GitHub: [@vibhavg-ctrl](https://github.com/vibhavg-ctrl)
